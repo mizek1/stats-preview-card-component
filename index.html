@@ -1,33 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap"
+    rel="stylesheet">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+
   <title>Frontend Mentor | Stats preview card component</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    :root {
+      --very-dark-blue: hsl(233, 47%, 7%);
+      --dark-desaturated-blue: hsl(244, 38%, 16%);
+      --soft-violet: hsl(277, 64%, 61%);
+      --white: hsl(0, 0%, 100%);
+      --transparent-white-paragraph: hsla(0, 0%, 100%, 0.75);
+      --transparent-white-headings: hsla(0, 0%, 100%, 0.6);
+    }
+
+    body {
+      margin: 0;
+      font-size: 15px;
+      font-family: 'Inter', sans-serif;
+    }
+
+    main {
+      min-height: 100vh;
+      background: var(--very-dark-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card {
+      background: var(--dark-desaturated-blue);
+      border-radius: 10px;
+      display: flex;
+      margin: 30px;
+    }
+
+    .card-image {
+      background-image: url(images/image-header-desktop.jpg);
+      background-color: var(--soft-violet);
+      background-blend-mode: multiply;
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 55%;
+      border-radius: 0 10px 10px 0;
+    }
+
+    .card-text {
+      width: 40%;
+      color: var(--white);
+      padding: 3.5em 5em 3.5em 3.5em;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-main-title {
+      font-size: 26px;
+      margin-top: 0;
+      margin-bottom: 18px;
+    }
+
+    .card-subtext {
+      color: var(--transparent-white-paragraph);
+      font-size: 11px;
+      margin-bottom: 55px;
+    }
+
+    .card-stats-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .card-stats {
+      display: flex;
+      flex-direction: column;
+      padding-right: 25px;
+    }
+
+    .stats-number {
+      font-size: 18px;
+      font-weight: 900;
+      margin-bottom: 5px;
+    }
+
+    .stats-heading {
+      font-family: 'Lexend Deca', sans-serif;
+      text-transform: uppercase;
+      font-size: 10px;
+      color: var(--transparent-white-headings);
+    }
+
+    @media (min-width: 375px) and (max-width: 1439px) {
+      .card {
+        width: 360px;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+      }
+
+      .card-image {
+        width: 100%;
+        height: 250px;
+        border-radius: 15px 15px 0px 0px;
+      }
+
+      .card-text {
+        width: 75%;
+        padding: 1em;
+        text-align: center;
+        margin-top: 15px;
+      }
+
+      .card-subtext {
+        font-size: 15px;
+        line-height: 1.8em;
+      }
+
+      .card-stats-container {
+        flex-direction: column;
+      }
+
+      .card-stats {
+        margin-bottom: 25px;
+      }
+
+      .stats-number {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      .stats-heading {
+        font-size: 12px;
+      }
+    }
+
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+      background: var(--very-dark-blue);
+      color: var(--white);
+    }
+
+    .attribution a {
+      color: var(--transparent-white-headings);
+    }
   </style>
 </head>
+
 <body>
+  <main>
+    <div class="card">
+      <section class="card-text">
+        <h1 class="card-main-title">Get <span style="color: var(--soft-violet)">insights</span> that help your business grow.</h1>
 
-  Get insights that help your business grow.
+        <p class="card-subtext">Discover the benefits of data analytics and make better decisions regarding revenue, customer
+        experience, and overall efficiency.</p>
 
-  Discover the benefits of data analytics and make better decisions regarding revenue, customer 
-  experience, and overall efficiency.
+        <div class="card-stats-container">
+          <div class="card-stats"><span class="stats-number">10k+</span><span class="stats-heading">companies</span></div>
+          <div class="card-stats"><span class="stats-number">314</span><span class="stats-heading">templates</span></div>
+          <div class="card-stats"><span class="stats-number">12M+</span><span class="stats-heading">queries</span></div>
+        </div>
 
-  10k+ companies
-  314 templates
-  12m+ queries
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+      </section>
+      <div class="card-image"></div>
+    </div>
+  </main>
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Danilo Alves</a>.
+  </footer>
 </body>
+
 </html>
